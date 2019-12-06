@@ -1,0 +1,46 @@
+
+     <div><h1 style="text-align: center;">Details</h1></div>
+    <div class="bg">
+        <!-- Page Content -->
+        <div class="container">
+          <div class=" bg card border-0 shadow my-9">
+            <div class="card-body p-5">
+             
+              <div class="container-fluid " >
+                <div class="row">
+              
+                 <div *ngFor="let t of cards;let indice=index">
+                  <ng-container *ngIf="ident==t.id">
+                      <div>
+                          <div class="container">
+                              <div class="card" style="width:200px">
+                                <img class="card-img-top" [src]="t.img" style="width:100%" >
+                                <div class="card-body">
+                                  <h4 class="card-title"> {{t.libelle}}</h4>
+                                  <p class="card-text">Le id:{{t.id}}</p>
+                                  <p class="card-text">le prix:{{t.prix}}DT</p>
+                                  <p class="card-text">Validité :{{t.bool}}</p>
+                                  <p class="card-text"> Gender:{{t.gender}}</p>
+                                  <p class="card-text"> Race:{{t.race}}</p>
+                                  <p class="card-text">Date:{{t.dat |date:'dd/MM/yyyy'}}</p>
+                                  <a href="#" class="btn btn-primary">Adopt</a>
+                                </div>
+                              </div>
+                              </div>
+                        
+                    </div>
+                  </ng-container>
+                 </div>
+                </div>
+              </div>
+              <div style="height: 600px"></div>
+              
+            </div>
+          </div>
+        </div>
+        </div>
+        <footer id="sticky-footer" class="py-4 bg-black text-white-50">
+            <div class="container text-center">
+              <small>Copyright &copy; SouidAbdelwehed</small>
+            </div>
+          </footer>

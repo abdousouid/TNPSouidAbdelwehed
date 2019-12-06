@@ -1,0 +1,43 @@
+
+
+<div><h1 style="text-align: center;"> Puppies List</h1></div>
+<div class="bg">
+<!-- Page Content -->
+<div class="container">
+  <div class=" bg card border-9 shadow my-9">
+    <div class="card-body p-5">
+      
+      <div class="container-fluid " >
+        <div class="row">
+      <ng-container *ngFor="let t of c;let i=index">
+        
+          <div class="col-sm-4">
+          <ul style="width:200px" class="list-group">
+              <div class="card" style="width:200px">
+                  <img class="card-img-top" [src]="t.img" style="width:100%" >
+                  <div class="card-body">
+                    <h4 class="card-title"> {{t.libelle |tree}}</h4>
+                    <p class="card-text">Le id:{{t.id}}</p>
+                    <p class="card-text">le prix:{{t.prix}} DT</p>
+                    <p class="card-text">Date : {{t.dat |date:'dd/MM/yyyy'}} </p>
+                    
+                    <a class="btn btn-primary" [routerLink]="[t.id]">link</a>
+                    <button class="btn btn-secondary" (click)="ondelete(i)"><img src="/assets/trash-fill.svg" width="20" height="20" title="Bootstrap">Delete</button>
+                  </div>
+                </div>
+          </ul>
+        </div>
+      </ng-container>
+        </div>
+      </div>
+      <div style="height: 600px"></div>
+      
+    </div>
+  </div>
+</div>
+</div>
+<footer id="sticky-footer" class="py-4 bg-black text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; SouidAbdelwehed</small>
+    </div>
+  </footer>

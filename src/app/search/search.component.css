@@ -1,0 +1,12 @@
+.bg{
+     
+    background: url('../../assets/back2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  
+}
+.bg-black{
+    background: #000;
+}

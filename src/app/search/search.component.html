@@ -1,0 +1,59 @@
+<div><h1 style="text-align: center;">Looking for a Puppie</h1></div>
+<div class="bg">
+<!-- Page Content -->
+<div class="container">
+  <div class=" bg card border-10 shadow my-9">
+    <div class="card-body p-5">
+     
+      <div class="container-fluid " >
+        <div class="row">
+          <div>
+            <form>
+            <div class="form-group">
+            <label style="font-weight: bold;">
+              Search By Id or Price :
+            </label>
+            <input class="form-control" type="text" id="p" name="prix"  placeholder="Search" #price [(ngModel)]="rechercher"/>
+          </div>
+          
+        </form>
+        
+        <div class="container-fluid">
+        <ng-container *ngFor="let t of c;let i=index">
+        <div *ngIf="rechercher==c[i].race||rechercher>=c[i].prix ">
+        
+            <div class="row">
+              <div class="col-sm-4">
+                  <div class="card" style="width:200px">
+                    <img class="card-img-top" [src]="c[i].img" style="width:100%" >
+                    <div class="card-body">
+                      <h4 class="card-title"> {{c[i].libelle |tree}}</h4>
+                      <p class="card-text">Le id:{{c[i].id}}</p>
+                      <p class="card-text">le prix:{{c[i].prix}}DT</p>
+                      <p class="card-text">Validité :{{c[i].bool}}</p>
+                      <p class="card-text"> Gender:{{c[i].gender}}</p>
+                      <p class="card-text"> Race:{{c[i].race}}</p>
+                      <p class="card-text">Date:{{c[i].dat |date:'dd/MM/yyyy'}}</p>
+                      
+                    </div>
+                  </div>
+                  </div>
+            
+        </div>
+        </div>
+      </ng-container>
+    </div>
+      </div>
+        </div>
+      </div>
+      <div style="height: 600px"></div>
+      
+    </div>
+  </div>
+</div>
+</div>
+<footer id="sticky-footer" class="py-4 bg-black text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; SouidAbdelwehed</small>
+    </div>
+  </footer>

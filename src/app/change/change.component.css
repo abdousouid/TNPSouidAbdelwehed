@@ -1,0 +1,23 @@
+.bg{
+     
+    background: url('../../assets/back1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  
+}
+input.ng-valid{
+    border-left: 2px solid green;
+}
+
+input.ng-invalid{
+    border-left: 2px solid red;
+}
+.btn-black{
+    background-color: #000 !important;
+    color: #fff;
+}
+.bg-black{
+    background: #000;
+}

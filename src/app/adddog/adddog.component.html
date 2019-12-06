@@ -1,0 +1,96 @@
+<div><h1 style="text-align: center;">Add a Puppie</h1></div>
+<div class="bg">
+    
+    <!-- Page Content -->
+    <div class="container">
+      <div class=" bg card border-0 shadow my-9">
+        <div class="card-body p-5">
+         <div class="container">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="form-group">
+                    <label for="id">
+                        Id:
+                    </label>
+                    <input type="number" id="id" name="id" [(ngModel)]="ident" class="form-control" required #identif>
+                </div>
+                <div *ngIf="identif.invalid && identif.dirty" class="alert alert-danger">
+                    L'identifiant doit etre un nombre
+                </div>
+                <div class="form-group">
+                    <label for="libelle">
+                        Libelle:
+                    </label>
+                    <input type="text" id="libelle" name="lib" [(ngModel)]="libelle" class="form-control" required pattern="[A-Z][a-zA-Z]+" #lib="ngModel" >
+                </div>
+                <div *ngIf="lib.errors?.pattern && lib.dirty" class="alert alert-danger">
+                    Libelle !!!!
+                </div>
+                <div class="form-group">
+                    <label for="img">
+                        Image:
+                    </label>
+                    <input type="text" id="img" name="i" [(ngModel)]="img" class="form-control" pattern="../assets/[a-zA-Z1-9].+[a-z]+" required #i="ngModel">
+
+                </div>
+                <div *ngIf="i.errors?.pattern && i.invalid && i.dirty" class="alert alert-danger">
+                    Choisr une image
+                </div>
+                <div class="form-group">
+                    <label for="prix">
+                        Prix:
+                    </label>
+                    <input type="number" id="prix" name="p" [(ngModel)]="prix" class="form-control" required  #p="ngModel">
+
+                </div>
+                <div *ngIf="p.invalid && p.dirty" class="alert alert-danger">
+                        Le prix doit etre un nombre
+                    </div>
+                    <div class="form-group">
+                            <label for="bool">
+                                validité:<br>
+                                <input type="radio" id="bool" name="b" [(ngModel)]="bool" class="form-control" value="true" required  #b1="ngModel">
+                                <input type="radio" id="bool" name="b" [(ngModel)]="bool" class="form-control" value="false" required  #b="ngModel">
+                            </label>
+                            
+
+                        </div>
+                        <div *ngIf="b.unchecked && b1.unchecked" class="alert alert-danger">
+                            Choisir!!!!
+                        </div>
+                        <div class="form-group">
+                                <label for="race">
+                                    Race:
+                                </label>
+                                <input type="text" id="race" name="r" [(ngModel)]="race" class="form-control" required pattern="[A-Z][a-zA-Z]+" #r="ngModel" >
+                            </div>
+                            <div *ngIf="r.errors?.pattern && r.dirty" class="alert alert-danger">
+                                Libelle !!!!
+                            </div>
+                            <div class="form-group">
+                                    <label for="gender">
+                                        Gender:
+                                    </label>
+                                    <input type="text" id="gender" name="gen" [(ngModel)]="gender" class="form-control" required pattern="[A-Z][a-zA-Z]+" #gen="ngModel" >
+                                </div>
+                                <div *ngIf="lib.errors?.pattern && lib.dirty" class="alert alert-danger">
+                                    Libelle !!!!
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-black" [disabled]="f.invalid">Enregistrer</button>
+        <input type="reset" class="btn btn-secondary" (click)="f.reset();submitted=false;" value="Vider"/>
+        <div [hidden] ="!submitted">
+            fucku faggot
+        </div>
+            </form>
+         </div>
+          <div style="height: 600px"></div>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+    <footer id="sticky-footer" class="py-4 bg-black text-white-50">
+            <div class="container text-center">
+              <small>Copyright &copy; SouidAbdelwehed</small>
+            </div>
+          </footer>

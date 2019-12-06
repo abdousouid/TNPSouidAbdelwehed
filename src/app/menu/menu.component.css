@@ -1,0 +1,9 @@
+.active{
+    font-weight: bold;
+}
+.navbar-custom {
+    background-color: #000;
+}
+.search{
+    margin-left: 50%;
+}
